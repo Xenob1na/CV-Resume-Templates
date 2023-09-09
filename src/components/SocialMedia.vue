@@ -3,7 +3,9 @@
 <template>
     <div class="container">
         <article class="social-tag">@johncarter</article>
-        <img :src="socials.img" alt="" v-for="(socials, index) in social" class="social-img">
+        <a :href="socials.link" v-for="(socials, index) in social">
+            <img :src="socials.img" alt="" class="social-img">
+        </a>
     </div>
 </template>
 
@@ -12,22 +14,28 @@ import { ref } from 'vue';
 
 const social = ref([
     {
-        img: '/img/Facebook.svg'
+        img: '/img/Facebook.svg',
+        link: 'https://m.facebook.com/'
     },
     {
-        img: '/img/Linkedin.svg'
+        img: '/img/Linkedin.svg',
+        link: 'https://ru.linkedin.com/'
     },
     {
-        img: '/img/Twitter.svg'
+        img: '/img/Twitter.svg',
+        link: 'https://twitter.com/'
     },
     {
-        img: '/img/Youtube.svg'
+        img: '/img/Youtube.svg',
+        link: 'https://www.youtube.com/'
     },
     {
-        img: '/img/Instagram.svg'
+        img: '/img/Instagram.svg',
+        link: 'http://instagram.com/'
     },
     {
-        img: '/img/Github.svg'
+        img: '/img/Github.svg',
+        link: 'https://github.com/'
     },
 ])
 </script>
@@ -49,6 +57,7 @@ const social = ref([
 
     .social-img {
         margin: 10px;
+        cursor: pointer;
     }
 }
 </style>
